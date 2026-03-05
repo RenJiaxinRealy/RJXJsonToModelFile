@@ -12,7 +12,7 @@ Pod::Spec.new do |spec|
   # ―――  Spec Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
   spec.name         = "RJXJsonToModelFile"
-  spec.version      = "1.0.0"
+  spec.version      = "1.0.1"
   spec.summary      = "JSON 字符串快速转换为 Swift Model 文件"
 
   spec.description  = <<-DESC
