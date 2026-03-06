@@ -1,9 +1,5 @@
 # RJXJsonToModelFile
 
-[![Version](https://img.shields.io/cocoapods/v/RJXJsonToModelFile.svg?style=flat)](https://cocoapods.org/pods/RJXJsonToModelFile)
-[![Platform](https://img.shields.io/cocoapods/p/RJXJsonToModelFile.svg?style=flat)](https://cocoapods.org/pods/RJXJsonToModelFile)
-
-
 **RJXJsonToModelFile** 是一个将 JSON 字符串快速转换为 Swift Model 文件的工具库。支持复杂嵌套 JSON、自动类型推断、snake_case 转 camelCase 等功能，让你告别手写 Model 的烦恼。
 
 ## ✨ 特性
@@ -14,21 +10,6 @@
 - 🎯 **复杂嵌套支持** - 支持多层嵌套对象和数组，自动为嵌套对象生成独立 Struct
 - 📦 **自动命名** - Model 名称自动追加"Model"后缀（如需要）
 - 📁 **批量输出** - 所有生成的文件自动保存到桌面的工作区文件夹
-
-## 📦 安装
-
-### CocoaPods
-
-在 `Podfile` 中添加：
-
-```ruby
-pod 'RJXJsonToModelFile', :configurations => ['Debug']
-```
-然后执行：
-
-```bash
-$ pod install
-```
 
 ### 手动安装
 
