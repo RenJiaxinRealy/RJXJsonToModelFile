@@ -12,7 +12,7 @@ Pod::Spec.new do |spec|
   # ―――  Spec Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
   spec.name         = "RJXJsonToModelFile"
-  spec.version      = "1.0.1"
+  spec.version      = "1.0.2"
   spec.summary      = "JSON 字符串快速转换为 Swift Model 文件"
 
   spec.description  = <<-DESC
@@ -52,7 +52,7 @@ Pod::Spec.new do |spec|
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
-  spec.source_files  = "RJXJsonToModelFile/*.swift"
+  spec.source_files  = "RJXJsonToModelFile/**/*.{swift}"
 
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
