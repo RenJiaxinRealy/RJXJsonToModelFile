@@ -44,132 +44,26 @@ $ pod install
 ```swift
 import RJXJsonToModelFile
 
-let jsonString = """
-{
-    "user_id": 123,
-    "user_name": "John",
-    "email": "john@example.com"
-}
 """
 
 do {
-    let modelCode = try JsonToModel.convert(jsonString, to: "User")
+    let modelCode = try JsonToModel.convert("json字符串", to: "model名字")
     print(modelCode)
 } catch {
     print("转换失败：\(error)")
 }
 ```
 
-### 使用转换器
+### 异步调用
 
 ```swift
 import RJXJsonToModelFile
 
-let converter = JsonToModelConverter()
-
 do {
-    let modelCode = try converter.convert(jsonString: jsonString, modelName: "User")
+    let modelCode = try JsonToModel.convertAsync("json字符串", to: "model名字")
     print(modelCode)
 } catch {
     print("错误：\(error)")
-}
-```
-
-## 📖 使用示例
-
-### 1. 简单 JSON
-
-**输入 JSON：**
-```json
-{
-    "user_id": 123,
-    "user_name": "John",
-    "email": "john@example.com"
-}
-```
-
-**生成代码：**
-```swift
-struct User: Codable {
-    let userId: Int
-    let userName: String
-    let email: String
-
-    enum CodingKeys: String, CodingKey {
-        case userId = "user_id"
-        case userName = "user_name"
-        case email
-    }
-}
-```
-
-### 2. 嵌套对象
-
-**输入 JSON：**
-```json
-{
-    "user": {
-        "profile": {
-            "bio": "Developer",
-            "social": {
-                "wechat": "@john"
-            }
-        }
-    }
-}
-```
-
-**生成代码：**
-```swift
-struct Root: Codable {
-    let user: RootUser
-}
-
-struct RootUser: Codable {
-    let profile: RootUserProfile
-}
-
-struct RootUserProfile: Codable {
-    let bio: String
-    let social: RootUserProfileSocial
-}
-
-struct RootUserProfileSocial: Codable {
-    let wechat: String
-}
-```
-
-### 3. 数组嵌套
-
-**输入 JSON：**
-```json
-{
-    "projects": [
-        {
-            "project_id": 1,
-            "project_name": "Project A",
-            "tech_stack": ["Swift", "UIKit"]
-        }
-    ]
-}
-```
-
-**生成代码：**
-```swift
-struct Root: Codable {
-    let projects: [RootProject]
-}
-
-struct RootProject: Codable {
-    let projectId: Int
-    let projectName: String
-    let techStack: [String]
-
-    enum CodingKeys: String, CodingKey {
-        case projectId = "project_id"
-        case projectName = "project_name"
-        case techStack = "tech_stack"
-    }
 }
 ```
 
